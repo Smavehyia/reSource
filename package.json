@@ -7,7 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "client": "cd client && yarn start",
     "server" : "cd server && yarn server",
-    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "build-client": "cd client && yarn && yarn run build",
+    "build-server": "yarn server", 
+    "heroku-postbuild": "yarn run build-client && yarn run build-server"
   },
   "repository": {
     "type": "git",
